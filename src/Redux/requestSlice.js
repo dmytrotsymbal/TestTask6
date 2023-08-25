@@ -13,6 +13,7 @@ const requestSlice = createSlice({
         selectedType: "gadgets",
         date: "2022-01-01",
         description: "description",
+        createdAt: new Date().toISOString(),
       },
 
       {
@@ -21,6 +22,7 @@ const requestSlice = createSlice({
         cityTo: "deliver",
         requestType: "deliver",
         date: "2023-01-01",
+        createdAt: new Date().toISOString(),
       },
     ],
   },
