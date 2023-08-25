@@ -1,30 +1,33 @@
 import { useSelector, useDispatch } from "react-redux";
-import { deleteOrder } from "../../Redux/orderSlice";
+import { deleteRequest } from "../../Redux/requestSlice";
 import { Button } from "@mui/material";
 // import { format } from "date-fns";
+import './RequestsList.css'
 
 
 const RequestsList = () => {
-  const orders = useSelector((state) => state.orders.orders);
+  const requests = useSelector((state) => state.request.requests);
   const dispatch = useDispatch();
   return (
     <div className="RequestsList">
       <ul>
-        {orders.map((order) => (
-          <li key={order.id}>
-            <div style={{ border: "1px solid black", marginBottom: "10px" }}>
-              {order.cityFrom} - {order.cityTo}
+        {requests.map((request) => (
+          <li key={request.id}>
+            <div style={{ border: "1px solid black", marginBottom: "10px" }}
+            className={request.requestType === "order" ? "orderItem" : "deliverItem"}
+            >
+              {request.cityFrom} - {request.cityTo}
               <br />
-              {order.description}
+              {request.description}
               <br />
-              data - {order.date}
+              data - {request.date}
               <br />
-              type - {order.selectedType}
+              type - {request.selectedType}
               <br />
-              create at - {order.createdAt}
+              create at - {request.createdAt}
               <hr />
               <Button
-                onClick={() => dispatch(deleteOrder(order.id))}
+                onClick={() => dispatch(deleteRequest(request.id))}
                 variant="contained"
               >
                 Delete

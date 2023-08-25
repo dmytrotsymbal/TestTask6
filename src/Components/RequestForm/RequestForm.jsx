@@ -3,24 +3,20 @@ import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addRequest } from "../../Redux/requestSlice";
 
-const OrderForm = () => {
+const RequestForm = () => {
   const dispatch = useDispatch();
 
   const [cityFrom, setCityFrom] = useState("");
   const [cityTo, setCityTo] = useState("");
-  const [selectedType, setSelectedType] = useState("gadgets");
   const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
-  const [requestType, setRequestType] = useState("order");
+  const [requestType, setRequestType] = useState("deliver");
 
   const addOrderFunc = () => {
-    dispatch(addRequest({ cityFrom, cityTo, selectedType, date, description, requestType }));
+    dispatch(addRequest({ cityFrom, cityTo, date, requestType }));
     setCityFrom("");
     setCityTo("");
-    setSelectedType("gadgets");
     setDate("");
-    setDescription("");
-    setRequestType("order");
+    setRequestType("deliver");
   };
 
   return (
@@ -40,31 +36,11 @@ const OrderForm = () => {
           onChange={(e) => setCityTo(e.target.value)}
         />
 
-        <select
-          value={selectedType}
-          onChange={(e) => setSelectedType(e.target.value)}
-        >
-          <option value="gadgets">Gadgets</option>
-          <option value="drinks">Drinks</option>
-          <option value="clothes">Clothes</option>
-          <option value="medicines">Medicines</option>
-          <option value="other">Other</option>
-        </select>
-
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-
-        <textarea
-          cols="30"
-          rows="10"
-          value={description}
-          placeholder="description"
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-
         <Button onClick={addOrderFunc} variant="contained">
           Submit
         </Button>
@@ -72,4 +48,4 @@ const OrderForm = () => {
     </div>
   );
 };
-export default OrderForm;
+export default RequestForm;

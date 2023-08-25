@@ -1,25 +1,35 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { format } from "date-fns"; // Добавьте этот импорт
 
-const orderSlice = createSlice({
-  name: "orders",
+const requestSlice = createSlice({
+  name: "requests",
   initialState: {
-    orders: [
+    requests: [
       {
         id: new Date().toISOString(),
         cityFrom: "Kyiv",
         cityTo: "London",
+        requestType: "order",
         selectedType: "gadgets",
         date: "2022-01-01",
         description: "description",
       },
+
+      {
+        id: 34234234234324,
+        cityFrom: "deliver",
+        cityTo: "deliver",
+        requestType: "deliver",
+        date: "2023-01-01",
+      },
     ],
   },
   reducers: {
-    addOrder: (state, action) => {
+    addRequest: (state, action) => {
       const currentDate = new Date();
-      state.orders.push({
+      state.requests.push({
         id: new Date().toISOString(),
+        requestType: action.payload.requestType,
         cityFrom: action.payload.cityFrom,
         cityTo: action.payload.cityTo,
         selectedType: action.payload.selectedType,
@@ -28,13 +38,13 @@ const orderSlice = createSlice({
         createdAt: currentDate.toISOString(),
       });
     },
-    deleteOrder: (state, action) => {
-      state.orders = state.orders.filter(
-        (order) => order.id !== action.payload
+    deleteRequest: (state, action) => {
+      state.requests = state.requests.filter(
+        (request) => request.id !== action.payload
       );
     },
   },
 });
 
-export const { addOrder, deleteOrder } = orderSlice.actions;
-export default orderSlice.reducer;
+export const { addRequest, deleteRequest } = requestSlice.actions;
+export default requestSlice.reducer;

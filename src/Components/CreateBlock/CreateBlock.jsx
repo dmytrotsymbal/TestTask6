@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import OrderForm from '../OrderForm/OrderForm';
+import RequestForm from '../RequestForm/RequestForm';
 
 
 export function CustomTabPanel(props) {
@@ -52,7 +53,7 @@ export default function BasicTabs() {
         <OrderForm />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <RequestForm />
       </CustomTabPanel>
     </Box>
   );

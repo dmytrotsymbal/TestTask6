@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import orderSlice from "./orderSlice";
+import requestSlice from "./requestSlice";
 
 export default configureStore({
   reducer: {
-    orders: orderSlice,
+    request: requestSlice,
   },
 });
