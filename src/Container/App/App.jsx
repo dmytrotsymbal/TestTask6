@@ -1,9 +1,8 @@
-
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Create from '../../Pages/Create/Create';
-import RequestsList from '../../Pages/RequestsList/RequestsList';
 import Header from '../Header/Header';
+import RequestsPage from '../../Pages/RequestsPage/RequestsPage';
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/create' element={<Create /> } />
-        <Route path='/requests' element={<RequestsList /> } />
+        <Route path='/requests' element={<RequestsPage /> } />
       </Routes>
     </div>
   );

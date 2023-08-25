@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import { useSelector, useDispatch } from "react-redux";
-import { addOrder, deleteOrder } from "../../Redux/orderSlice";
+import { useDispatch } from "react-redux";
+import { addOrder } from "../../Redux/orderSlice";
 
 const OrderForm = () => {
-  const orders = useSelector((state) => state.orders.orders);
   const dispatch = useDispatch();
 
   const [cityFrom, setCityFrom] = useState("");
@@ -69,31 +68,6 @@ const OrderForm = () => {
           Submit
         </Button>
       </form>
-
-      <hr />
-
-      <ul>
-        {orders.map((order) => (
-          <li key={order.id}>
-            <div style={{ border: "1px solid black", marginBottom: "10px" }}>
-              {order.cityFrom} - {order.cityTo}
-              <br />
-              {order.description}
-              <br />
-              data - {order.date}
-              <br />
-              type - {order.selectedType}
-              <hr />
-              <Button
-                onClick={() => dispatch(deleteOrder(order.id))}
-                variant="contained"
-              >
-                Delete
-              </Button>
-            </div>
-          </li>
-        ))}
-      </ul>
     </>
   );
 };

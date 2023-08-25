@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import { format } from "date-fns"; // Добавьте этот импорт
 
 const orderSlice = createSlice({
   name: "orders",
@@ -16,6 +17,7 @@ const orderSlice = createSlice({
   },
   reducers: {
     addOrder: (state, action) => {
+      const currentDate = new Date();
       state.orders.push({
         id: new Date().toISOString(),
         cityFrom: action.payload.cityFrom,
@@ -23,6 +25,7 @@ const orderSlice = createSlice({
         selectedType: action.payload.selectedType,
         date: action.payload.date,
         description: action.payload.description,
+        createdAt: currentDate.toISOString(),
       });
     },
     deleteOrder: (state, action) => {
