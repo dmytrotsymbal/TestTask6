@@ -27,10 +27,9 @@
   flex-direction: column;
 }
 .RequestsList .sortPanel .sortPanelContainer button {
-  width: 170px;
+  width: 270px;
   margin: 10px 0;
   height: 40px;
-  font-size: 12px;
 }
 .RequestsList ul {
   list-style: none;

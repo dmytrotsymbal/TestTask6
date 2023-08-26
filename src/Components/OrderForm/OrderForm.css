@@ -1,0 +1,29 @@
+.OrderFormContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.OrderFormContainer form {
+  margin-top: 20px;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(132, 130, 130);
+  border-radius: 4px;
+}
+.OrderFormContainer form input, .OrderFormContainer form textarea, .OrderFormContainer form select {
+  width: 100%;
+  margin: 10px 0;
+  border: 0;
+  border-bottom: 1px solid black;
+}
+.OrderFormContainer form input:focus, .OrderFormContainer form textarea:focus, .OrderFormContainer form select:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}/*# sourceMappingURL=OrderForm.css.map */

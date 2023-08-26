@@ -19,13 +19,13 @@ const SortPanel = () => {
           variant="contained"
           onClick={() => dispatch(sortRequestsByDateAsc())}
         >
-          Sort by Date Asc
+          Sort by Date of dispatch &uarr;
         </Button>
         <Button
           variant="contained"
           onClick={() => dispatch(sortRequestsByDateDesc())}
         >
-          Sort by Date Desc
+          Sort by Date of dispatch &darr;
         </Button>
         </div>
 

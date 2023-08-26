@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addRequest } from "../../Redux/requestSlice";
+import './OrderForm.scss'
 
 const OrderForm = () => {
   const dispatch = useDispatch();
@@ -24,9 +25,9 @@ const OrderForm = () => {
   };
 
   return (
-    <div>
-      <form style={{ width: "30%", display: "flex", flexDirection: "column" }}>
-       
+    <div className="OrderFormContainer">
+      <h2 style={{ textAlign: "center" }}>Create an order</h2>
+      <form>
         <input
           type="text"
           value={cityFrom}

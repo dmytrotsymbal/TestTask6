@@ -1,12 +1,31 @@
 import { Link } from "react-router-dom"
-
+import { useSelector } from "react-redux"
+import { Badge } from "@mui/material"
+import { Container } from "@mui/material"
+import "./Header.scss"
 const Header = () => {
+
+  const requests = useSelector((state) => state.request.requests);
+
   return (
-    <header style={{ width: "100%", height: "70px", backgroundColor: "#2B2B2B", color: "white", display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <nav style={{ width: "30%", height: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+    <header>
+      <Container maxWidth="lg">
+        <nav>
+          <div className="Left">
+            <h2>LOGO</h2>
+          </div>
+
+          <div className="Right" >
             <Link style={{ color: "white", textDecoration: "none" }} to="/create">Create</Link>
-            <Link style={{ color: "white", textDecoration: "none" }} to="/requests">Requests</Link>
+            <Link style={{ color: "white", textDecoration: "none" }} to="/requests">
+              <Badge badgeContent={requests.length} color="secondary">
+                Requests
+              </Badge>
+            </Link>
+          </div>
         </nav>
+      </Container>
+
     </header>
   )
 }

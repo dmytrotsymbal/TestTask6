@@ -1,19 +1,23 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Create from '../../Pages/Create/Create';
+import CreatePage from '../../Pages/CreatePage/CreatePage';
+import OrderPage from '../../Pages/CreatePage/OrderPage/OrderPage';
+import DeliveryPage from '../../Pages/CreatePage/DeliveryPage/DeliveryPage';
 import Header from '../Header/Header';
 import RequestsPage from '../../Pages/RequestsPage/RequestsPage';
-import HomePage from '../../Pages/HomePage/HomePage';
 
 function App() {
   return (
     <div className="App">
       <Header />
+      <main>
       <Routes>
-        <Route path='/' element={<HomePage /> } />
-        <Route path='/create' element={<Create /> } />
+        <Route path='/create' element={<CreatePage /> } />
+        <Route path='/create/order' element={<OrderPage /> } />
+        <Route path='/create/delivery' element={<DeliveryPage /> } />
         <Route path='/requests' element={<RequestsPage /> } />
       </Routes>
+      </main>
     </div>
   );
 }

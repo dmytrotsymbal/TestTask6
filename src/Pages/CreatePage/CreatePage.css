@@ -1,0 +1,23 @@
+.orderPart, .deliveryPart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.orderPart p, .deliveryPart p {
+  width: 50%;
+  text-align: center;
+}
+.orderPart .link, .deliveryPart .link {
+  position: absolute;
+  top: 100px;
+}
+
+.DeliveryPage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=CreatePage.css.map */
