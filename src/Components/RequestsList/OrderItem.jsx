@@ -1,5 +1,7 @@
 import React from "react";
 import { Button, Card, CardActions, CardContent } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 const OrderItem = ({
   cityFrom,
@@ -24,12 +26,15 @@ const OrderItem = ({
         </p>
       </CardContent>
 
-      <CardActions>
-        <Button onClick={onDelete} variant="contained">
+      <CardActions className="actions">
+        <Button variant="contained" onClick={onDelete} startIcon={<DeleteIcon />}>
           Delete
         </Button>
-      </CardActions>
 
+        <Button variant="contained" startIcon={<EditIcon />}>
+          Edit
+        </Button>
+      </CardActions>
     </Card>
   );
 };

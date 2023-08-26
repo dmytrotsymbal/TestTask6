@@ -1,5 +1,8 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, Card, CardActions, CardContent } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+
 
 const DeliverItem = ({
   cityFrom,
@@ -9,17 +12,25 @@ const DeliverItem = ({
   onDelete,
 }) => {
   return (
-    <div className="deliveryItem">
-      {cityFrom} - {cityTo}
-      <br />
-      data - {date}
-      <br />
-      create at - {createdAt}
-      <hr />
-      <Button onClick={onDelete} variant="contained">
-        Delete
-      </Button>
-    </div>
+    <Card className="deliveryItem">
+      <CardContent>
+        <h4>From {cityFrom} - to {cityTo}</h4>
+        <strong> Date of dispatch - {date}</strong>
+        <p>
+          Request created at - {createdAt}
+        </p>
+      </CardContent>
+
+      <CardActions className="actions">
+        <Button variant="contained" onClick={onDelete} startIcon={<DeleteIcon />}>
+          Delete
+        </Button>
+
+        <Button variant="contained" startIcon={<EditIcon />}>
+          Edit
+        </Button>
+      </CardActions>
+    </Card>
   );
 };
 

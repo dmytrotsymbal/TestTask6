@@ -27,5 +27,56 @@
 
   ul{
     list-style: none;
+
+    .deliveryItem{
+      margin-bottom: 10px;
+      background-color: bisque;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .actions{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+
+        button{
+          margin: 10px 0;
+        }
+      }
+
+      h4{
+        margin: 0;
+      }
+    }
+
+    .orderItem{
+      background-color: rgb(206, 170, 239);
+      height: 100%;
+      padding: 0%;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .actions{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+
+        button{
+          margin: 10px 0;
+        }
+      }
+
+      h4{
+        margin: 0;
+      }
+    }
   }
 }
