@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, Card, CardActions, CardContent } from "@mui/material";
 
 const OrderItem = ({
   cityFrom,
@@ -11,24 +11,26 @@ const OrderItem = ({
   onDelete,
 }) => {
   return (
-    <div
-      style={{ border: "1px solid black", marginBottom: "10px" }}
-      className="orderItem"
-    >
-      {cityFrom} - {cityTo}
-      <br />
-      {description}
-      <br />
-      data - {date}
-      <br />
-      type - {selectedType}
-      <br />
-      create at - {createdAt}
-      <hr />
-      <Button onClick={onDelete} variant="contained">
-        Delete
-      </Button>
-    </div>
+    <Card className="orderItem">
+      <CardContent>
+        <h4>From {cityFrom} - to {cityTo}</h4>
+        <strong> Date of dispatch - {date}</strong>
+        <p>
+          Type of parcel - {selectedType}
+        </p>
+        <p>Description: {description}</p>
+        <p>
+          Request created at - {createdAt}
+        </p>
+      </CardContent>
+
+      <CardActions>
+        <Button onClick={onDelete} variant="contained">
+          Delete
+        </Button>
+      </CardActions>
+
+    </Card>
   );
 };
 

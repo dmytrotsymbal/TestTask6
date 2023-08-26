@@ -25,6 +25,8 @@ const requestSlice = createSlice({
         createdAt: new Date().toISOString(),
       },
     ],
+
+    sortedRequests: [],
   },
   reducers: {
     addRequest: (state, action) => {
@@ -45,8 +47,25 @@ const requestSlice = createSlice({
         (request) => request.id !== action.payload
       );
     },
+
+    sortRequestsByDateAsc: (state, action) => {
+      state.sortedRequests = state.requests.sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+    },
+
+    sortRequestsByDateDesc: (state, action) => {
+      state.sortedRequests = state.requests.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+    },
   },
 });
 
-export const { addRequest, deleteRequest } = requestSlice.actions;
+export const {
+  addRequest,
+  deleteRequest,
+  sortRequestsByDateAsc,
+  sortRequestsByDateDesc,
+} = requestSlice.actions;
 export default requestSlice.reducer;

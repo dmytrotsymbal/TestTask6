@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteRequest } from "../../Redux/requestSlice";
 import OrderItem from "./OrderItem";
@@ -7,19 +6,16 @@ import DeliverItem from "./DeliverItem";
 import "./RequestsList.css";
 import SortPanel from "../SortPanel/SortPanel";
 
-
 const RequestsList = () => {
   const requests = useSelector((state) => state.request.requests);
   const dispatch = useDispatch();
- 
 
-  const [sortedRequests, setSortedRequests] = useState([]);
+  const sortedRequests = useSelector((state) => state.request.sortedRequests);
 
   return (
     <div className="RequestsList">
-      <SortPanel requests={requests} setSortedRequests={setSortedRequests} />
-      <hr />
-      <h2>Requests</h2>
+      <h2>Requests list:</h2>
+      <SortPanel />
       <ul>
         {(sortedRequests.length ? sortedRequests : requests).map((request) => (
           <li key={request.id}>

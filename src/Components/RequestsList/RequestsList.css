@@ -1,11 +1,24 @@
-.orderItem {
-  background-color: blue;
+.RequestsList h2 {
+  text-align: center;
 }
-
-.deliverItem {
-  background-color: red;
+.RequestsList .sortPanel {
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.sortPanel {
-  background-color: bisque;
+.RequestsList .sortPanel .sortPanelContainer {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.RequestsList .sortPanel .sortPanelContainer button {
+  width: 170px;
+  font-size: 12px;
+}
+.RequestsList ul {
+  list-style: none;
+}/*# sourceMappingURL=RequestsList.css.map */

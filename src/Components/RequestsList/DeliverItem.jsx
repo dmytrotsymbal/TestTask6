@@ -9,10 +9,7 @@ const DeliverItem = ({
   onDelete,
 }) => {
   return (
-    <div
-      style={{ border: "1px solid black", marginBottom: "10px" }}
-      className="deliveryItem"
-    >
+    <div className="deliveryItem">
       {cityFrom} - {cityTo}
       <br />
       data - {date}
