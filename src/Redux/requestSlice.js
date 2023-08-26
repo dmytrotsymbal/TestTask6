@@ -70,7 +70,16 @@ const requestSlice = createSlice({
       state.sortedRequests = state.requests.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
-    }
+    },
+
+    editRequest: (state, action) => {
+      const { id, cityFrom, cityTo } = action.payload;
+      const requestIndex = state.requests.findIndex((request) => request.id === id);
+      if (requestIndex !== -1) {
+        state.requests[requestIndex].cityFrom = cityFrom;
+        state.requests[requestIndex].cityTo = cityTo;
+      }
+    },
   },
 });
 
@@ -81,5 +90,6 @@ export const {
   sortRequestsByDateDesc,
   sortRequestsByCreatedAtAsc,
   sortRequestsByCreatedAtDesc,
+  editRequest,
 } = requestSlice.actions;
 export default requestSlice.reducer;
