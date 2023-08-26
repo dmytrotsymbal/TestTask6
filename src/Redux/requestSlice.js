@@ -48,17 +48,29 @@ const requestSlice = createSlice({
       );
     },
 
-    sortRequestsByDateAsc: (state, action) => {
+    sortRequestsByDateAsc: (state) => {
       state.sortedRequests = state.requests.sort(
         (a, b) => new Date(a.date) - new Date(b.date)
       );
     },
 
-    sortRequestsByDateDesc: (state, action) => {
+    sortRequestsByDateDesc: (state) => {
       state.sortedRequests = state.requests.sort(
         (a, b) => new Date(b.date) - new Date(a.date)
       );
     },
+
+    sortRequestsByCreatedAtAsc: (state) => {
+      state.sortedRequests = state.requests.sort(
+        (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+      );
+    },
+
+    sortRequestsByCreatedAtDesc: (state) => {
+      state.sortedRequests = state.requests.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+    }
   },
 });
 
@@ -67,5 +79,7 @@ export const {
   deleteRequest,
   sortRequestsByDateAsc,
   sortRequestsByDateDesc,
+  sortRequestsByCreatedAtAsc,
+  sortRequestsByCreatedAtDesc,
 } = requestSlice.actions;
 export default requestSlice.reducer;

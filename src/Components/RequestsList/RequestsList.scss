@@ -6,20 +6,35 @@
   
   .sortPanel{
     width: 100%;
-    background-color: white;
-    height: 70px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .sortPanelContainer{
-      width: 30%;
+      width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
+
+      .left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+      }
 
       button{
         width: 170px;
+        margin: 10px 0;
+        height: 40px;
         font-size: 12px;
       }
     }
