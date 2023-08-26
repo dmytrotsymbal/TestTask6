@@ -43,6 +43,7 @@ const DeliverItem = ({
         {isEditingPopup ? (
           <div className="popupBack">
             <div className="popup">
+            <h3 style={{ textTransform: 'uppercase', fontStyle: 'italic', fontWeight: 'normal', margin: '0px', marginBottom: '10px' }}>Deliver form</h3>
               <input type="text" value={editedCityFrom} onChange={(e) => setEditedCityFrom(e.target.value)} />
               <input type="text" value={editedCityTo} onChange={(e) => setEditedCityTo(e.target.value)} />
               <input type="date" value={editedDate} onChange={(e) => setEditedDate(e.target.value)} />
@@ -59,9 +60,10 @@ const DeliverItem = ({
 
         ) : (
           <div>
-            <h4>From {editedCityFrom} - to {editedCityTo}</h4>
-            <strong>Date of dispatch - {editedDate}</strong>
-            <p>Request created at - {createdAt}</p>
+            <h3 style={{ textTransform: 'uppercase', fontStyle: 'italic', fontWeight: 'normal', margin: '0px', marginBottom: '10px' }}>Deliver</h3>
+            <h4>From <span style={{ textDecoration: "underline" }}>{editedCityFrom}</span> - to <span style={{ textDecoration: "underline" }}>{editedCityTo}</span></h4>
+            <strong>Date of dispatch - <span style={{ fontStyle: "italic" }}>{editedDate}</span></strong>
+            <p>Request created at - <span style={{ textDecoration: "underline" }}>{createdAt}</span></p>
           </div>
         )}
       </CardContent>

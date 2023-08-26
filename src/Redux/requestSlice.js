@@ -13,7 +13,7 @@ const requestSlice = createSlice({
         selectedType: "gadgets",
         date: "2022-01-01",
         description: "description",
-        createdAt: new Date().toISOString(),
+        createdAt: new Date().toLocaleDateString(),
       },
 
       {
@@ -22,7 +22,7 @@ const requestSlice = createSlice({
         cityTo: "deliver",
         requestType: "deliver",
         date: "2023-01-01",
-        createdAt: new Date().toISOString(),
+        createdAt: new Date().toLocaleDateString(),
       },
     ],
 
@@ -30,7 +30,6 @@ const requestSlice = createSlice({
   },
   reducers: {
     addRequest: (state, action) => {
-      const currentDate = new Date();
       state.requests.push({
         id: new Date().toISOString(),
         requestType: action.payload.requestType,
@@ -39,7 +38,7 @@ const requestSlice = createSlice({
         selectedType: action.payload.selectedType,
         date: action.payload.date,
         description: action.payload.description,
-        createdAt: currentDate.toISOString(),
+        createdAt:  new Date().toLocaleDateString(),
       });
     },
     deleteRequest: (state, action) => {

@@ -36,7 +36,7 @@
 }
 .RequestsList ul .deliveryItem {
   margin-bottom: 10px;
-  background-color: bisque;
+  background-color: #bbdafa;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -100,8 +100,11 @@
 .RequestsList ul .deliveryItem h4 {
   margin: 0;
 }
+.RequestsList ul .deliveryItem:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
 .RequestsList ul .orderItem {
-  background-color: rgb(206, 170, 239);
+  background-color: rgb(254, 219, 153);
   height: 100%;
   padding: 0%;
   margin-bottom: 10px;
@@ -168,4 +171,7 @@
 }
 .RequestsList ul .orderItem h4 {
   margin: 0;
+}
+.RequestsList ul .orderItem:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }/*# sourceMappingURL=RequestsList.css.map */
