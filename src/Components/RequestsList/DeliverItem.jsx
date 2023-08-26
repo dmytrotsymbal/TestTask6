@@ -19,6 +19,7 @@ const DeliverItem = ({
   const [isEditingPopup, setIsEditingPopup] = useState(false);
   const [editedCityFrom, setEditedCityFrom] = useState(cityFrom);
   const [editedCityTo, setEditedCityTo] = useState(cityTo);
+  const [editedDate, setEditedDate] = useState(date);
 
   const startEditFunc = () => {
     setIsEditingPopup(true);
@@ -30,6 +31,7 @@ const DeliverItem = ({
         id,
         cityFrom: editedCityFrom,
         cityTo: editedCityTo,
+        date: editedDate
       })
     );
     setIsEditingPopup(false);
@@ -43,6 +45,7 @@ const DeliverItem = ({
             <div className="popup">
               <input type="text" value={editedCityFrom} onChange={(e) => setEditedCityFrom(e.target.value)} />
               <input type="text" value={editedCityTo} onChange={(e) => setEditedCityTo(e.target.value)} />
+              <input type="date" value={editedDate} onChange={(e) => setEditedDate(e.target.value)} />
               <div className="popupActions">
                 <Button variant="contained" onClick={SaveFunc} startIcon={<CheckIcon />}>
                   Save
@@ -57,7 +60,7 @@ const DeliverItem = ({
         ) : (
           <div>
             <h4>From {editedCityFrom} - to {editedCityTo}</h4>
-            <strong>Date of dispatch - {date}</strong>
+            <strong>Date of dispatch - {editedDate}</strong>
             <p>Request created at - {createdAt}</p>
           </div>
         )}

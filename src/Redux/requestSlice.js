@@ -73,11 +73,13 @@ const requestSlice = createSlice({
     },
 
     editRequest: (state, action) => {
-      const { id, cityFrom, cityTo } = action.payload;
+      const { id, cityFrom, cityTo, description, date } = action.payload;
       const requestIndex = state.requests.findIndex((request) => request.id === id);
       if (requestIndex !== -1) {
         state.requests[requestIndex].cityFrom = cityFrom;
         state.requests[requestIndex].cityTo = cityTo;
+        state.requests[requestIndex].description = description;
+        state.requests[requestIndex].date = date;
       }
     },
   },
