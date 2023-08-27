@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 const CreatePage = () => {
   return (
     <div className="CreateRequest">
-      <h2 style={{ textAlign: "center" }}>Create request</h2>
+      <h2>Create request</h2>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={6}>
@@ -21,7 +21,7 @@ const CreatePage = () => {
             <div className="deliveryPart">
               <p>Other cases...</p>
               <Link className="link" to="/create/delivery">
-                <Button variant="contained">Create a delivery</Button>
+                <Button variant="contained" >Create a delivery</Button>
               </Link>
             </div>
           </Grid>

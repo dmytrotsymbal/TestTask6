@@ -16,8 +16,8 @@ const Header = () => {
           </div>
 
           <div className="Right" >
-            <Link style={{ color: "white", textDecoration: "none" }} to="/create">Create</Link>
-            <Link style={{ color: "white", textDecoration: "none" }} to="/requests">
+            <Link to="/create">Create</Link>
+            <Link to="/requests">
               <Badge badgeContent={requests.length} color="secondary">
                 Requests
               </Badge>

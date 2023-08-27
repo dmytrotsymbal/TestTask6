@@ -19,4 +19,8 @@ header nav .Right {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header nav .Right a {
+  color: white;
+  text-decoration: none;
 }/*# sourceMappingURL=Header.css.map */
