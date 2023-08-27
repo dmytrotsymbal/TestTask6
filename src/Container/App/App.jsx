@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import CreatePage from '../../Pages/CreatePage/CreatePage';
 import OrderPage from '../../Pages/CreatePage/OrderPage/OrderPage';
@@ -12,6 +12,7 @@ function App() {
       <Header />
       <main>
       <Routes>
+      <Route path='/' element={<Navigate to="/create" />} />
         <Route path='/create' element={<CreatePage /> } />
         <Route path='/create/order' element={<OrderPage /> } />
         <Route path='/create/delivery' element={<DeliveryPage /> } />

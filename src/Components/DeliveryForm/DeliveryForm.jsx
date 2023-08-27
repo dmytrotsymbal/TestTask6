@@ -13,16 +13,20 @@ const DeliveryForm = () => {
   const [requestType, setRequestType] = useState("deliver");
 
   const addOrderFunc = () => {
+    if (cityFrom === "" || cityTo === "" || date === "") {
+      alert("Please fill in all the fields");
+    } else {
     dispatch(addRequest({ cityFrom, cityTo, date, requestType }));
     setCityFrom("");
     setCityTo("");
     setDate("");
     setRequestType("deliver");
+    }
   };
 
   return (
     <div className="DeliveryFormContainer">
-       <h2 style={{ textAlign: "center" }}>Create an order</h2>
+       <h2 style={{ textAlign: "center" }}>Create an deliver</h2>
       <form>
         <input
           type="text"
