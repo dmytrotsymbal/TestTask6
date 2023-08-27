@@ -5,25 +5,25 @@ const requestSlice = createSlice({
   name: "requests",
   initialState: {
     requests: [
-      {
-        id: new Date().toISOString(),
-        cityFrom: "Kyiv",
-        cityTo: "London",
-        requestType: "order",
-        selectedType: "gadgets",
-        date: "2022-01-01",
-        description: "description",
-        createdAt: new Date().toLocaleDateString(),
-      },
+      // {
+      //   id: new Date().toISOString(),
+      //   cityFrom: "Kyiv",
+      //   cityTo: "London",
+      //   requestType: "order",
+      //   selectedType: "gadgets",
+      //   date: "2022-01-01",
+      //   description: "description",
+      //   createdAt: new Date().toLocaleDateString(),
+      // },
 
-      {
-        id: 34234234234324,
-        cityFrom: "deliver",
-        cityTo: "deliver",
-        requestType: "deliver",
-        date: "2023-01-01",
-        createdAt: new Date().toLocaleDateString(),
-      },
+      // {
+      //   id: 34234234234324,
+      //   cityFrom: "deliver",
+      //   cityTo: "deliver",
+      //   requestType: "deliver",
+      //   date: "2023-01-01",
+      //   createdAt: new Date().toLocaleDateString(),
+      // },
     ],
 
     sortedRequests: [],
@@ -38,7 +38,7 @@ const requestSlice = createSlice({
         selectedType: action.payload.selectedType,
         date: action.payload.date,
         description: action.payload.description,
-        createdAt:  new Date().toLocaleDateString(),
+        createdAt: new Date().toLocaleDateString(),
       });
     },
     deleteRequest: (state, action) => {

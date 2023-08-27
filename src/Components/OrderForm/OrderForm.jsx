@@ -15,7 +15,7 @@ const OrderForm = () => {
   const [requestType, setRequestType] = useState("order");
 
   const addOrderFunc = () => {
-    if (cityFrom === "" || cityTo === "" || selectedType === "" || date === "") {
+    if (cityFrom === "" || cityTo === "" || selectedType === "" || date === "" || description === "") {
       alert("Please fill in all the fields");
     } else {
       dispatch(addRequest({ cityFrom, cityTo, selectedType, date, description, requestType }));
@@ -66,7 +66,7 @@ const OrderForm = () => {
           cols="30"
           rows="10"
           value={description}
-          placeholder="Description (optional)"
+          placeholder="Description"
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
 

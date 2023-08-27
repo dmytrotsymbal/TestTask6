@@ -7,6 +7,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useDispatch } from "react-redux";
 import { editRequest } from "../../Redux/requestSlice";
+import OrderDel from "../OrderDel/OrderDel";
 
 const OrderItem = ({
   cityFrom,
@@ -40,6 +41,26 @@ const OrderItem = ({
     setIsEditingPopup(false);
   };
 
+  const CancelFunc = () => {
+    setEditedCityFrom(cityFrom);
+    setEditedCityTo(cityTo);
+    setEditedDate(date);
+    setEditedDescription(description);
+    setIsEditingPopup(false);
+  }
+
+  //---------------------------------------------
+
+  const [isDeleteOrderPopup, setIsDeleteOrderPopup] = useState(false);
+
+  const openDeleteOrderPopup = () => {
+    setIsDeleteOrderPopup(true);
+  }
+
+  const closeDeleteOrderPopup = () => {
+    setIsDeleteOrderPopup(false);
+  }
+
   return (
     <Card className="orderItem">
       <CardContent>
@@ -55,7 +76,7 @@ const OrderItem = ({
                 <Button variant="contained" onClick={SaveFunc} startIcon={<CheckIcon />}>
                   Save
                 </Button>
-                <Button variant="contained" onClick={() => setIsEditingPopup(false)} startIcon={<ClearIcon />}>
+                <Button variant="contained" onClick={CancelFunc} startIcon={<ClearIcon />}>
                   Cancel
                 </Button>
               </div>
@@ -74,8 +95,10 @@ const OrderItem = ({
         }
       </CardContent>
 
+      <OrderDel isDeleteOrderPopup={isDeleteOrderPopup} closeDeleteOrderPopup={closeDeleteOrderPopup} onDelete={onDelete} />
+
       <CardActions className="actions">
-        <Button variant="contained" onClick={onDelete} startIcon={<DeleteIcon />}>
+        <Button variant="contained" onClick={openDeleteOrderPopup} startIcon={<DeleteIcon />}>
           Delete
         </Button>
 

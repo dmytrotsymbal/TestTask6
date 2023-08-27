@@ -26,7 +26,7 @@ const DeliveryForm = () => {
 
   return (
     <div className="DeliveryFormContainer">
-       <h2 style={{ textAlign: "center" }}>Create an deliver</h2>
+       <h2 style={{ textAlign: "center" }}>Create a deliver</h2>
       <form>
         <input
           type="text"
