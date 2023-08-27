@@ -3,6 +3,7 @@ import './CreatePage.scss'
 import { Link } from "react-router-dom"
 
 const CreatePage = () => {
+  
   return (
     <div className="CreateRequest">
       <h2>Create request</h2>

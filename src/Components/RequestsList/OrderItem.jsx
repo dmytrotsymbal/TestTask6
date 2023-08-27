@@ -67,7 +67,7 @@ const OrderItem = ({
         {isEditingPopup ? (
           <div className="popupBack">
             <div className="popup">
-            <h3 style={{ textTransform: 'uppercase', fontStyle: 'italic', fontWeight: 'normal', margin: '0px', marginBottom: '10px' }}>Order form</h3>
+            <h3 className="popupTitle">Order form</h3>
               <input type="text" value={editedCityFrom} onChange={(e) => setEditedCityFrom(e.target.value)} />
               <input type="text" value={editedCityTo} onChange={(e) => setEditedCityTo(e.target.value)} />
               <input type="date" value={editedDate} onChange={(e) => setEditedDate(e.target.value)} />
@@ -84,12 +84,12 @@ const OrderItem = ({
           </div>
         ) : (
           <div className="content">
-           <h3 style={{ textTransform: 'uppercase', fontStyle: 'italic', fontWeight: 'normal', margin: '0px', marginBottom: '10px' }}>Order</h3>
-            <h4>From <span style={{ textDecoration: "underline" }}>{editedCityFrom}</span> - to <span style={{ textDecoration: "underline" }}>{editedCityTo}</span></h4>
-            <strong>Date of dispatch - <span style={{ fontStyle: "italic" }}>{editedDate}</span></strong>
-            <p>Type of parcel - <span style={{ fontWeight: "bold" }}>{selectedType}</span></p>
+           <h3>Order</h3>
+           <h4>From <span className="underline">{editedCityFrom}</span> - to <span className="underline">{editedCityTo}</span></h4>
+           <strong>Date of dispatch - <span className="italic">{editedDate}</span></strong>
+            <p>Type of parcel - <span className="bold">{selectedType}</span></p>
             <p>Description: {editedDescription}</p>
-            <p>Request created at - <span style={{ textDecoration: "underline" }}>{createdAt}</span></p>
+            <p>Request created at - <span className="italic">{createdAt}</span></p>
           </div>
         )
         }

@@ -10,6 +10,12 @@ import { Button } from "@mui/material";
 const SortPanel = () => {
   const dispatch = useDispatch();
 
+  const onSortByDateAsc = () => dispatch(sortRequestsByDateAsc());
+  const onSortByDateDesc = () => dispatch(sortRequestsByDateDesc());
+
+  const onSortByCreatedAtAsc = () => dispatch(sortRequestsByCreatedAtAsc());
+  const onSortByCreatedAtDesc = () => dispatch(sortRequestsByCreatedAtDesc());
+
   return (
     <div className="sortPanel">
       <div className="sortPanelContainer">
@@ -17,13 +23,13 @@ const SortPanel = () => {
         <div className="left">
         <Button
           variant="contained"
-          onClick={() => dispatch(sortRequestsByDateAsc())}
+          onClick={onSortByDateAsc}
         >
           Sort by Date of dispatch &uarr;
         </Button>
         <Button
           variant="contained"
-          onClick={() => dispatch(sortRequestsByDateDesc())}
+          onClick={onSortByDateDesc}
         >
           Sort by Date of dispatch &darr;
         </Button>
@@ -32,13 +38,13 @@ const SortPanel = () => {
         <div className="right">
         <Button
           variant="contained"
-          onClick={() => dispatch(sortRequestsByCreatedAtAsc())}
+          onClick={onSortByCreatedAtAsc}
         >
           Sort by Date of creation &uarr;
         </Button>
         <Button
           variant="contained"
-          onClick={() => dispatch(sortRequestsByCreatedAtDesc())}
+          onClick={onSortByCreatedAtDesc}
         >
           Sort by Date of creation &darr;
         </Button>

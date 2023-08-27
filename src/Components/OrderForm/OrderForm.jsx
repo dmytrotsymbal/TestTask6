@@ -28,10 +28,14 @@ const OrderForm = () => {
     }
   };
 
+  //-----------------------------
+
+  const typeOptions = ["gadgets", "drinks", "clothes", "medicines", "other"];
+
   return (
     <div className="OrderFormContainer">
-      <h2 style={{ textAlign: "center" }}>Create an order</h2>
-      <form>
+      <h2>Create an order</h2>
+      <form onSubmit={addOrderFunc}>
         <input
           type="text"
           value={cityFrom}
@@ -49,11 +53,11 @@ const OrderForm = () => {
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}
         >
-          <option value="gadgets">Gadgets</option>
-          <option value="drinks">Drinks</option>
-          <option value="clothes">Clothes</option>
-          <option value="medicines">Medicines</option>
-          <option value="other">Other</option>
+          {typeOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
 
         <input
@@ -70,7 +74,7 @@ const OrderForm = () => {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
 
-        <Button onClick={addOrderFunc} variant="contained">
+        <Button type="submit" variant="contained">
           Submit
         </Button>
       </form>

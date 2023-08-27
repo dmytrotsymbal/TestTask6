@@ -26,8 +26,8 @@ const DeliveryForm = () => {
 
   return (
     <div className="DeliveryFormContainer">
-       <h2 style={{ textAlign: "center" }}>Create a deliver</h2>
-      <form>
+       <h2>Create a deliver</h2>
+      <form onSubmit={addOrderFunc}>
         <input
           type="text"
           value={cityFrom}
@@ -46,7 +46,7 @@ const DeliveryForm = () => {
           value={date}
           onChange={(e) => setDate(e.target.value)}
         />
-        <Button onClick={addOrderFunc} variant="contained">
+        <Button type="submit" variant="contained">
           Submit
         </Button>
       </form>

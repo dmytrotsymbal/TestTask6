@@ -70,6 +70,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.RequestsList ul .deliveryItem .popupBack .popup .popupTitle {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
 .RequestsList ul .deliveryItem .popupBack .popup input {
   margin: 10px 0;
   width: 100%;
@@ -87,6 +93,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.RequestsList ul .deliveryItem .content h3 {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: normal;
+}
+.RequestsList ul .deliveryItem .content .underline {
+  text-decoration: underline;
+}
+.RequestsList ul .deliveryItem .content .italic {
+  font-style: italic;
 }
 .RequestsList ul .deliveryItem .actions {
   display: flex;
@@ -141,6 +160,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.RequestsList ul .orderItem .popupBack .popup .popupTitle {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+}
 .RequestsList ul .orderItem .popupBack .popup input {
   margin: 10px 0;
   width: 100%;
@@ -158,6 +183,22 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.RequestsList ul .orderItem .content h3 {
+  text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: normal;
+}
+.RequestsList ul .orderItem .content .underline {
+  text-decoration: underline;
+}
+.RequestsList ul .orderItem .content .bold {
+  font-weight: bold;
+}
+.RequestsList ul .orderItem .content .italic {
+  font-style: italic;
 }
 .RequestsList ul .orderItem .actions {
   height: 100%;
