@@ -39,6 +39,17 @@ const requestSlice = createSlice({
                 description: action.payload.description,
                 createdAt: new Date().toLocaleDateString(),
             })
+
+            state.sortedRequests.push({
+                id: new Date().toISOString(),
+                requestType: action.payload.requestType,
+                cityFrom: action.payload.cityFrom,
+                cityTo: action.payload.cityTo,
+                selectedType: action.payload.selectedType,
+                date: action.payload.date,
+                description: action.payload.description,
+                createdAt: new Date().toLocaleDateString(),
+            })
         },
         deleteRequest: (state, action) => {
             state.requests = state.requests.filter(
