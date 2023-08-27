@@ -6,6 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import { editRequest } from "../../Redux/requestSlice";
+import DelConfirmation from "../DelConfirmation/DelConfirmation";
 
 const DeliverItem = ({
   id,
@@ -20,7 +21,6 @@ const DeliverItem = ({
   const [editedCityFrom, setEditedCityFrom] = useState(cityFrom);
   const [editedCityTo, setEditedCityTo] = useState(cityTo);
   const [editedDate, setEditedDate] = useState(date);
-
   const startEditFunc = () => {
     setIsEditingPopup(true);
   };
@@ -37,6 +37,16 @@ const DeliverItem = ({
     setIsEditingPopup(false);
   };
 
+  const [isDeletePopup, setIsDeletePopup] = useState(false);
+
+  const openDeletePopup = () => {
+    setIsDeletePopup(true);
+  }
+
+  const closeDeletePopup = () => {
+    setIsDeletePopup(false);
+  }
+
   return (
     <Card className="deliveryItem">
       <CardContent>
@@ -49,9 +59,9 @@ const DeliverItem = ({
               <input type="date" value={editedDate} onChange={(e) => setEditedDate(e.target.value)} />
               <div className="popupActions">
                 <Button variant="contained" onClick={SaveFunc} startIcon={<CheckIcon />}>
-                  Save
+                  Confirm
                 </Button>
-                <Button variant="contained" onClick={() => setIsEditingPopup(false)} startIcon={<ClearIcon />}>
+                <Button variant="outlined" onClick={() => setIsEditingPopup(false)} startIcon={<ClearIcon />}>
                   Cancel
                 </Button>
               </div>
@@ -68,8 +78,10 @@ const DeliverItem = ({
         )}
       </CardContent>
 
+      <DelConfirmation isDeletePopup={isDeletePopup} closeDeletePopup={closeDeletePopup} onDelete={onDelete} />
+
       <CardActions className="actions">
-        <Button variant="contained" onClick={onDelete} startIcon={<DeleteIcon />}>
+        <Button variant="contained" onClick={openDeletePopup} startIcon={<DeleteIcon />}>
           Delete
         </Button>
         <Button variant="contained" startIcon={<EditIcon />} onClick={startEditFunc}>
