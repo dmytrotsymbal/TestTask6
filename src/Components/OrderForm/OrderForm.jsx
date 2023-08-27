@@ -14,7 +14,8 @@ const OrderForm = () => {
   const [description, setDescription] = useState("");
   const [requestType, setRequestType] = useState("order");
 
-  const addOrderFunc = () => {
+  const addOrderFunc = (e) => {
+    e.preventDefault();
     if (cityFrom === "" || cityTo === "" || selectedType === "" || date === "" || description === "") {
       alert("Please fill in all the fields");
     } else {
