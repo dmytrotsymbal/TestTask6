@@ -1,15 +1,22 @@
-.orderPart, .deliveryPart {
+.CreateRequest h2 {
+  text-align: center;
+}
+
+.orderPart,
+.deliveryPart {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.orderPart p, .deliveryPart p {
+.orderPart p,
+.deliveryPart p {
   width: 50%;
   text-align: center;
 }
-.orderPart .link, .deliveryPart .link {
+.orderPart .link,
+.deliveryPart .link {
   position: absolute;
   top: 100px;
 }

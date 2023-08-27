@@ -5,6 +5,7 @@ import OrderPage from '../../Pages/CreatePage/OrderPage/OrderPage';
 import DeliveryPage from '../../Pages/CreatePage/DeliveryPage/DeliveryPage';
 import Header from '../Header/Header';
 import RequestsPage from '../../Pages/RequestsPage/RequestsPage';
+import ErrorPage from '../../Pages/404';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/create/order' element={<OrderPage /> } />
         <Route path='/create/delivery' element={<DeliveryPage /> } />
         <Route path='/requests' element={<RequestsPage /> } />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
       </main>
     </div>
